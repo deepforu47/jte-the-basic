@@ -4,7 +4,7 @@ void call(){
     }
     stage("Maven: Build"){
         docker.image("maven").inside{
-            sh("mvn clean package")
+            sh("mvn version")
         }
     }
 }
