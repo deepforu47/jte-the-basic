@@ -1,5 +1,10 @@
 void call(){
-    stage("Maven: Build"){
+    stage("Maven: Print Build"){
         println "build from the maven library"
+    }
+    stage("Maven: Build"){
+        docker.image("maven").inside{
+            sh("mvn clean package")
+        }
     }
 }
